@@ -2,8 +2,18 @@ library(dplyr)
 
 rm(list=ls())
 
+# Download the file & unzip
 
-pathToUnzipDataSet <- file.path(".", "UCI HAR Dataset")
+if(!file.exists("./data")) {
+  dir.create("./data")
+}
+
+fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(fileUrl, destfile = "./data/Dataset.zip", mode = "wb")
+
+unzip(zipfile = "./data/Dataset.zip", exdir = "./data")
+pathToUnzipDataSet <- file.path("./data", "UCI HAR Dataset")
+
 
 # Read the files into variables
 features <- read.table(file.path(pathToUnzipDataSet, "features.txt"), header = F, stringsAsFactors = F)
