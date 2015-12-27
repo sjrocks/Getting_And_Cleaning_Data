@@ -18,5 +18,5 @@ The script performs the following task:
 8. Remove duplicate columns.
 9. Select only columns - Subject, Activity & any column containing mean & std
 10. factorize the activity labels
-11. Describe the columns
+11. Describe the columns - Appropriate labeling such as "t" to "time"
 12. Aggregate , arrange and then write the clean data set.
